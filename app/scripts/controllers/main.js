@@ -41,7 +41,11 @@ angular.module('trainologicApp')
       {id: 8, name: 'Ori', type: 'Contact'},
     ];
 
-    $scope.toggleContacts = function(ind) {
-      $scope.contacts[ind].collapsed = !$scope.contacts[ind].collapsed;
+    $scope.toggleContacts = function(evt, item) {
+      evt.stopPropagation();
+
+      if (item.type === 'Group') {
+        item.collapsed = !item.collapsed;
+      }
     }
   });

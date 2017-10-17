@@ -39,5 +39,8 @@
   },
   "scripts": {
     "start": "grunt server"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
   }
 }
