@@ -1,0 +1,18 @@
+<div class="main-view">
+  <h1>Contact Tree</h1>
+  <hr/>
+  <div>
+    <ul class="group-tree">
+      <li ng-repeat="item in contacts" ng-click="toggleContacts($index)">
+        <div ng-class="item.type.toLowerCase()"> {{item.name}} </div>
+
+        <ul ng-hide="item.collapsed">
+          <li ng-repeat="contact in item.contacts">
+            <div ng-class="contact.type.toLowerCase()"> {{contact.name}} </div>
+          </li>
+        </ul>
+
+      </li>
+    </ul>
+  </div>
+</div>
