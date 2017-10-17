@@ -6,11 +6,11 @@
       <li ng-repeat="item in contacts" ng-click="toggleContacts($event, item)">
         <div ng-class="item.type.toLowerCase()"> {{item.name}} </div>
 
-        <ul ng-hide="item.collapsed">
+        <ul ng-if="!item.collapsed">
           <li ng-repeat="contact in item.contacts" ng-click="toggleContacts($event, contact)">
             <div ng-class="contact.type.toLowerCase()"> {{contact.name}} </div>
 
-            <ul ng-hide="contact.collapsed">
+            <ul ng-if="!contact.collapsed">
               <li ng-repeat="subContact in contact.contacts" ng-click="toggleContacts($event, subContact)">
                 <div ng-class="subContact.type.toLowerCase()"> {{subContact.name}} </div>
               </li>
