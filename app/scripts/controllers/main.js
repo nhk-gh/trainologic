@@ -8,8 +8,10 @@
  * Controller of the trainologicApp
  */
 angular.module('trainologicApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.contacts = [
+  .controller('MainCtrl', function () {
+    var self = this;
+
+    self.contacts = [
       {
         id:1,
         name: 'Friends',
@@ -41,11 +43,11 @@ angular.module('trainologicApp')
       {id: 8, name: 'Ori', type: 'Contact'},
     ];
 
-    $scope.toggleContacts = function(evt, item) {
+    self.toggleContacts = function(evt, item) {
       evt.stopPropagation();
 
       if (item.type === 'Group') {
         item.collapsed = !item.collapsed;
       }
-    }
+    };
   });
